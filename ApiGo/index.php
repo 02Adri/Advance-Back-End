@@ -8,4 +8,5 @@ require 'Controladores/Imagenes.php';
 require 'Controladores/Emprendedor.php';
 require 'Controladores/Detalles_Emprendimiento.php';
 require 'Controladores/Profesional_Curricular.php';
+require 'Controladores/ValidacionProfesional.php';
 Flight::start();

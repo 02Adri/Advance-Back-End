@@ -7,6 +7,8 @@ require 'Controladores/Profesional.php';
 require 'Controladores/Imagenes.php';
 require 'Controladores/Emprendedor.php';
 require 'Controladores/Detalles_Emprendimiento.php';
-require 'Controladores/Profesional_Curricular.php';
 require 'Controladores/ValidacionProfesional.php';
+require 'Controladores/Contacto.php';
+require 'Controladores/Informacion_Curricular.php';
 Flight::start();
+

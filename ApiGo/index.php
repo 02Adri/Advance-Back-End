@@ -10,5 +10,6 @@ require 'Controladores/Detalles_Emprendimiento.php';
 require 'Controladores/ValidacionProfesional.php';
 require 'Controladores/Contacto.php';
 require 'Controladores/Informacion_Curricular.php';
+require 'Controladores/ValidacionEmprendedor.php';
 Flight::start();
 

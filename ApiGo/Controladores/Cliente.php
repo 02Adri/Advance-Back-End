@@ -1,5 +1,5 @@
 <?php
-
+//Permite Conectarse a la base de datos SQL
 Flight::register('db','PDO',array('sqlsrv:server=DESKTOP-58HBMDE;Database=Advance_Go','sserver','root'));
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -7,6 +7,7 @@ header("Access-Control-Allow-Methods:POST");
 header("Access-Control-Max-Age:86400");
 header("Access-Control-Allow-Headers:Content-Type,Access-Control-Allow-Headers,Authorization,X-Requested-With");
 
+//Permite el retorno de los elemento de la tabla cliente
 Flight::route('GET /Cliente', function () {
    $sentencia=Flight::db()->prepare("SELECT * FROM Cliente");
    $sentencia->execute();
@@ -14,7 +15,7 @@ Flight::route('GET /Cliente', function () {
    Flight::json($datos);
    
 });
-
+//Envia datos desde los formulariosa la base de datos
 Flight::route('POST /Cliente', function(){
     $json_data=file_get_contents('php://input');
     $data=json_decode($json_data,true);
@@ -38,7 +39,7 @@ Flight::route('POST /Cliente', function(){
     
     Flight::jsonp(['Cliente Agregado Correctamente']);
 });
-
+//Elimina datos que se encuentran registrados
 
 Flight::route('DELETE /Cliente',function(){
    $json_data=file_get_contents('php://input');
@@ -49,7 +50,7 @@ Flight::route('DELETE /Cliente',function(){
    $sentencia->execute();
    Flight::jsonp(['Cliente Eliminado Correctamente']);
 });
-
+//Actualiza los usuario de la base de datos
 Flight::route('PUT /Cliente', function(){
    $json_data=file_get_contents('php://input');
    $data=json_decode($json_data,true);
